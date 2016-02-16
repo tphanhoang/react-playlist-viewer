@@ -39,10 +39,10 @@ export default class HeaderNav extends Component {
                         title="Menu"
                         iconElementLeft={<IconButton onClick={this.handleToggle}><NavigationClose /></IconButton>}	/>
                     <IndexLink to="/" activeClassName={styles.activeLink} className={styles.link}>
-                        <MenuItem>Home</MenuItem>
+                        <MenuItem onClick={this.handleToggle}>Home</MenuItem>
                     </IndexLink>
                     <Link to="/search" activeClassName={styles.activeLink} className={styles.link}>
-                        <MenuItem>Discover</MenuItem>
+                        <MenuItem onClick={this.handleToggle}>Discover</MenuItem>
                     </Link>
           </LeftNav>
         </div>)

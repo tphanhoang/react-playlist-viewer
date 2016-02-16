@@ -42,17 +42,6 @@ export default class App extends Component {
     return (
       <div>
         <HeaderNav />
-        <List title="Artist"
-              items={this.state.artists}
-              autoFilter={true}
-              onInputChange={this.onInputArtistChange} />
-        <List title="Kind"
-              items={this.state.kinds}
-              limit={10} />
-        <ItemDetails name="Odezenne"
-                     image={"https://i.scdn.co/image/ae22a4f41ab82ac18dcf0d83bd86703c3b83ee76"}
-                     kinds={["Rap","Hip-Hop","Underground"]}
-                     songs={[{name:"Bouche à lèvres"},{name:"Saxophone"},{name:"Vilaine"},{name:"Souffle le vent"},{name:"Vodka"}]}  />
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, {PropTypes, Component } from 'react';
 import Item from "Item";
 import Input from "Input";
+import debounce from "lodash.debounce";
 
 export default class List extends Component {
 
@@ -14,7 +15,7 @@ export default class List extends Component {
     static defaultProps = {
         title: "",
         items: [],
-        onInputChange: null,
+        onInputChange: ()=>{},
         autoFilter: true,
     };
 
@@ -30,6 +31,7 @@ export default class List extends Component {
       return (item.name && item.name.toLowerCase().search(this.state.inputValue.toLowerCase())!=-1);
     };
 
+
     render() {
 
       const {
@@ -39,10 +41,11 @@ export default class List extends Component {
         autoFilter,
       } = this.props
 
+
       return (
         <div className="list">
             {
-                <Input placeholder={title} onChange={onInputChange || this.onChangeHandler}/>
+                <Input placeholder={title} onChange={debounce(onInputChange,3000) || this.onChangeHandler}/>
             }
             {
               items &&

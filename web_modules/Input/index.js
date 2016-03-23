@@ -1,6 +1,8 @@
 import React, {PropTypes, Component} from "react"
+import debounce from "lodash.debounce";
 
 export default class Input extends Component {
+
 
     static propTypes = {
         type: PropTypes.string,
